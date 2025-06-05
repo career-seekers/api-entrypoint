@@ -35,11 +35,10 @@ dependencies {
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 
     // Spring Web
-    implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-webflux")
 
     // Spring Cloud
-    implementation("org.springframework.cloud:spring-cloud-starter-gateway-server-webmvc")
+    implementation("org.springframework.cloud:spring-cloud-starter-gateway-server-webflux")
 
     //Kotlinx coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
