@@ -17,6 +17,9 @@ class GatewayConfig {
     @Value("\${services.uri.mail-service}")
     private lateinit var mailServiceURI: String
 
+    @Value("\${services.uri.file-service}")
+    private lateinit var fileServiceURI: String
+
     @Bean
     fun customRouteLocator(builder: RouteLocatorBuilder): RouteLocator {
         return builder.routes()
@@ -31,6 +34,10 @@ class GatewayConfig {
             .route("mail-service") { r ->
                 r.path("/mail-service/**")
                     .uri(mailServiceURI)
+            }
+            .route("file-service") { r ->
+                r.path("/file-service/**")
+                    .uri(fileServiceURI)
             }
             .build()
     }
