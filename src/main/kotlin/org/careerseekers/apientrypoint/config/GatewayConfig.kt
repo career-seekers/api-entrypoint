@@ -24,7 +24,7 @@ class GatewayConfig {
     fun customRouteLocator(builder: RouteLocatorBuilder): RouteLocator {
         return builder.routes()
             .route("users-service") { r ->
-                r.path("/user-service/**")
+                r.path("/users-service/**")
                     .uri(userServiceURI)
             }
             .route("events-service") { r ->
