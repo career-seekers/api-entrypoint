@@ -8,6 +8,9 @@ services:
     events-service: ${EVENTS_SERVICE_URI}
     mail-service: ${MAIL_SERVICE_URI}
     file-service: ${FILE_SERVICE_URI}
+  frontend:
+    local: ${LOCAL_HOST}
+    production: ${PRODUCTION_HOST}
 
 server:
   port: 8080
