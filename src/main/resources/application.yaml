@@ -11,6 +11,7 @@ services:
   frontend:
     local: ${LOCAL_HOST}
     production: ${PRODUCTION_HOST}
+    productionPattern: ${PRODUCTION_HOST_PATTERN}
 
 server:
   port: 8080

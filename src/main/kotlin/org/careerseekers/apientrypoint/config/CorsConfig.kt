@@ -17,11 +17,16 @@ class CorsConfig {
     @Value("\${services.frontend.production}")
     private lateinit var frontendProductionHost: String
 
+    @Value("\${services.frontend.productionPattern}")
+    private lateinit var frontendProductionHostPattern: String
+
     @Bean
     fun corsWebFilter(): CorsWebFilter {
         val corsConfig = CorsConfiguration().apply {
             addAllowedOrigin(frontendLocalHost)
             addAllowedOrigin(frontendProductionHost)
+            addAllowedOriginPattern(frontendProductionHostPattern)
+
             allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
             allowedHeaders = listOf("Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With")
             allowCredentials = true
