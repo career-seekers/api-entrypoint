@@ -27,7 +27,7 @@ class CorsConfig {
             addAllowedOrigin(frontendProductionHost)
             addAllowedOriginPattern(frontendProductionHostPattern)
 
-            allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            allowedMethods = listOf("*")
             allowedHeaders = listOf("Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With")
             allowCredentials = true
         }
