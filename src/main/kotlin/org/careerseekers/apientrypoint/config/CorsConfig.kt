@@ -23,13 +23,12 @@ class CorsConfig {
     @Bean
     fun corsWebFilter(): CorsWebFilter {
         val corsConfig = CorsConfiguration().apply {
-//            addAllowedOrigin(frontendLocalHost)
-//            addAllowedOrigin(frontendProductionHost)
-//            addAllowedOriginPattern(frontendProductionHostPattern)
-            addAllowedOriginPattern("*")
+            addAllowedOrigin(frontendLocalHost)
+            addAllowedOrigin(frontendProductionHost)
+            addAllowedOriginPattern(frontendProductionHostPattern)
 
             allowedMethods = listOf("*")
-            allowedHeaders = listOf("Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With")
+            allowedHeaders = listOf("Content-Type", "Authorization", "Accept", "Origin", "X-Requested-With", "User-Email")
             allowCredentials = true
         }
 
